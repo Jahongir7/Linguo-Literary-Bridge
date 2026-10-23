@@ -78,11 +78,13 @@
 
 .quoteText {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: 25px;
+  font-weight: 600;
   font-style: italic;
   margin: 0 0 10px;
   color: #0f172a;
   line-height: 1.45;
+  letter-spacing: -0.015em;
 }
 
 .contextText {

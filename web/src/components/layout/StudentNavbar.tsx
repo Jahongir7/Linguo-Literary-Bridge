@@ -10,30 +10,43 @@ import type { CEFRLevel, UserRole } from '@/types';
 // Crisp inline SVGs (zero emojis)
 const NavIcons = {
   Logo: () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#1d4ed8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="#1d4ed8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M8 7h8M8 11h5" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" />
     </svg>
   ),
   Spark: () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
   ),
   Streak: () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
     </svg>
   ),
   Star: () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>
   ),
   Chevron: () => (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="6 9 12 15 18 9" />
+    </svg>
+  ),
+  Menu: () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  ),
+  Close: () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   ),
 };
@@ -44,12 +57,13 @@ export function StudentNavbar() {
   const { user, logout, switchDemoRole } = useAuthStore();
   const { activeLevel, setActiveLevel, xp, streak } = useBookStore();
   const [roleMenuOpen, setRoleMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { href: '/library', label: 'Kutubxona' },
     { href: '/reader/gf-p1-c01', label: 'Reader' },
     { href: '/book-generator', label: 'AI Generator', isFeatured: true },
-    { href: '/placement', label: 'Placement Test' },
+    { href: '/placement', label: 'Placement' },
     { href: '/thesaurus', label: 'Tezaurus' },
     { href: '/practice', label: 'Mashqlar' },
     { href: '/game', label: 'Figurani top' },
@@ -73,13 +87,13 @@ export function StudentNavbar() {
           <div className={styles.logoBadge}>
             <NavIcons.Logo />
           </div>
-          <div>
+          <div className={styles.brandText}>
             <span className={styles.brandTitle}>Linguo</span>
             <span className={styles.brandSub}>Literary Bridge</span>
           </div>
         </Link>
 
-        {/* Links */}
+        {/* Center Links (Always visible & fully fitted on desktop) */}
         <nav className={styles.navLinks}>
           {navLinks.map((link) => {
             const isActive =
@@ -109,16 +123,6 @@ export function StudentNavbar() {
                 key={lvl}
                 onClick={() => setActiveLevel(lvl)}
                 className={`${styles.levelPill} ${activeLevel === lvl ? styles.levelPillActive : ''}`}
-                style={{
-                  '--lvl-color':
-                    lvl === 'A2'
-                      ? 'var(--color-a2)'
-                      : lvl === 'B1'
-                      ? 'var(--color-b1)'
-                      : lvl === 'B2'
-                      ? 'var(--color-b2)'
-                      : 'var(--color-c1)',
-                } as React.CSSProperties}
               >
                 {lvl}
               </button>
@@ -170,8 +174,40 @@ export function StudentNavbar() {
           <button onClick={logout} className={styles.logoutBtn} title="Chiqish">
             Chiqish
           </button>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={styles.mobileToggleBtn}
+            aria-label="Menyu"
+          >
+            {mobileMenuOpen ? <NavIcons.Close /> : <NavIcons.Menu />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {mobileMenuOpen && (
+        <div className={styles.mobileMenu}>
+          <div className={styles.mobileNavLinks}>
+            {navLinks.map((link) => {
+              const isActive =
+                pathname === link.href || (link.href.startsWith('/reader') && pathname.startsWith('/reader'));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`${styles.mobileNavLink} ${isActive ? styles.navLinkActive : ''}`}
+                >
+                  {link.isFeatured && <NavIcons.Spark />}
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
