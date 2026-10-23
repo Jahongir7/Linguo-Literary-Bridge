@@ -1,0 +1,298 @@
+.pageWrapper {
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.mainContent {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.quizCard,
+.resultCard {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.06);
+}
+
+.quizHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quizBadge {
+  background: rgba(29, 78, 216, 0.08);
+  color: #1d4ed8;
+  border: 1px solid rgba(29, 78, 216, 0.2);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quizCount {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.progressBar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #0284c7);
+  transition: width 0.3s ease;
+}
+
+.questionText {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 24px;
+  color: #0f172a;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.optionBtn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionBtn:hover {
+  background: #f8fafc;
+  border-color: #1d4ed8;
+}
+
+.optionSelected {
+  background: #eff6ff;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.15);
+}
+
+.optLetter {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1d4ed8;
+  flex-shrink: 0;
+}
+
+.optionSelected .optLetter {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.optText {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.backBtn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.nextBtn {
+  background: #1d4ed8;
+  border: none;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+  transition: all 0.2s ease;
+}
+
+.nextBtn:hover:not(:disabled) {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.nextBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result Card */
+.resultCard {
+  text-align: center;
+}
+
+.trophyIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: rgba(29, 78, 216, 0.08);
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.resultTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.resultSub {
+  font-size: 14px;
+  color: #475569;
+  margin: 0 0 28px;
+}
+
+.levelCard {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(2, 132, 199, 0.03));
+  border: 1px solid rgba(29, 78, 216, 0.2);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.levelPillBadge {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.levelHeading {
+  font-size: 54px;
+  font-weight: 900;
+  color: #1d4ed8;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.levelDesc {
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.changeLevelBox {
+  margin-bottom: 28px;
+}
+
+.changeLevelBox p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.levelBtnsRow {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lvlSelect {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lvlSelect:hover {
+  background: #eff6ff;
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+.lvlSelectActive {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.startReadingBtn {
+  background: linear-gradient(135deg, #1d4ed8, #0284c7);
+  border: none;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 18px rgba(29, 78, 216, 0.35);
+  transition: all 0.2s ease;
+}
+
+.startReadingBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.45);
+}

@@ -1,0 +1,528 @@
+.pageWrapper {
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.mainContent {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* AI Banner */
+.aiBanner {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.08) 0%, rgba(2, 132, 199, 0.06) 100%);
+  border: 1px solid rgba(29, 78, 216, 0.22);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 36px;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.aiBannerContent {
+  max-width: 750px;
+}
+
+.aiBannerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(29, 78, 216, 0.1);
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.aiBannerContent h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+.aiBannerContent p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aiBannerBtn {
+  background: linear-gradient(135deg, #1d4ed8, #0284c7);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aiBannerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(29, 78, 216, 0.45);
+}
+
+/* Shelf Section */
+.shelfSection {
+  margin-bottom: 40px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.titleWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(29, 78, 216, 0.1);
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: #0f172a;
+}
+
+.sectionSub {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.activeLevelSelector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 4px 8px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.activeLevelSelector span {
+  font-size: 12px;
+  color: #64748b;
+  margin-right: 4px;
+  font-weight: 600;
+}
+
+.levelSelectBtn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.levelSelectBtn:hover {
+  color: #1d4ed8;
+  background: rgba(29, 78, 216, 0.06);
+}
+
+.levelSelectBtnActive {
+  background: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.3);
+}
+
+.worksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.workCard {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.04);
+}
+
+.workCard:hover {
+  border-color: rgba(29, 78, 216, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1);
+}
+
+.workCardSelected {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.2), 0 12px 30px rgba(37, 99, 235, 0.1);
+}
+
+.cardCover {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.workCard:hover .coverImg {
+  transform: scale(1.05);
+}
+
+.placeholderCover {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d4ed8;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statusPublished {
+  background: rgba(16, 185, 129, 0.9);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+}
+
+.statusDraft {
+  background: rgba(100, 116, 139, 0.9);
+  color: #ffffff;
+}
+
+.cardInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: #0f172a;
+}
+
+.cardAuthor {
+  font-size: 13px;
+  color: #0284c7;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.levelPills {
+  display: flex;
+  gap: 6px;
+}
+
+.levelA2, .levelB1, .levelB2, .levelC1 {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.levelA2 { background: #dcfce7; color: #15803d; }
+.levelB1 { background: #e0e7ff; color: #4338ca; }
+.levelB2 { background: #e0f2fe; color: #0369a1; }
+.levelC1 { background: #fae8ff; color: #86198f; }
+
+/* Chapters Section */
+.chaptersSection {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.05);
+}
+
+.chapterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.chapterHeader h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.activeLevelIndicator {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.activeLevelIndicator strong {
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+.chaptersList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chapterCard {
+  background: rgba(248, 250, 252, 0.8);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.chapterCard:hover {
+  background: #ffffff;
+  border-color: rgba(29, 78, 216, 0.35);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);
+}
+
+.chapterLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.chapterNumberBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(29, 78, 216, 0.08);
+  border: 1px solid rgba(29, 78, 216, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  color: #1d4ed8;
+  flex-shrink: 0;
+}
+
+.chapterTitleText {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.chapterMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.levelBadgesRow {
+  display: flex;
+  gap: 4px;
+}
+
+.chapterLevelTag {
+  font-size: 11px;
+  font-weight: 700;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.dimmedBadge {
+  opacity: 0.35;
+}
+
+.audioTag {
+  font-size: 11px;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.readingTime {
+  font-size: 11px;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chapterRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.progressBlock {
+  width: 140px;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.progressBar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #0284c7);
+}
+
+.chapterBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.readBtn {
+  background: #1d4ed8;
+  border: 1px solid #1e40af;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+}
+
+.readBtn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.testBtn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.testBtn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}

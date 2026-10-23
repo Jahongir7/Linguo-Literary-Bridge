@@ -1,0 +1,342 @@
+Texnik topshiriq (TZ): Linguo-Literary Bridge platformasi
+Versiya 0.1 (qoralama) · 2026-yil oktabr
+Buyurtmachi: [F.I.O. / tashkilot] · Maqsad: dasturchi jamoasi uchun ishlab chiqish asosi
+1. Umumiy ma'lumot
+•Loyiha nomi: Linguo-Literary Bridge: E.L. Voynich asarlari asosida CEFR darajalariga moslashtirilgan interaktiv SaaS platforma.
+•Mahsulot turi: SaaS (veb) + mobil ilova (Android va iOS). Joriy bosqich: mahsulot namunasi (prototip/MVP).
+•Asarlar: The Gadfly va Jack Raymond.
+•CEFR darajalari: A2, B1, B2, C1.
+•Moliyalashtirish: Innovatsiya agentligi. Veb-platforma 24/7 ishlashi kerak; hosting muddati 36 oy.
+•Asosiy g'oya: foydalanuvchi bir xil badiiy matnni o'z CEFR darajasida o'qiydi, matn ichida poetik va madaniy izohlarni ko'radi, tezaurus bilan ishlaydi, test va o'yinlar orqali mustahkamlaydi, "Ask Gadfly" AI-tutordan yordam oladi.
+•Maqsadli auditoriya: filologiya va ingliz tili yo'nalishi talabalari, ingliz tilini B1-C1 darajada o'rganuvchilar, adabiyot va ingliz tili o'qituvchilari.
+•Hujjat maqsadi: dasturchiga nima, qanday sifatda va qaysi tartibda yaratilishi kerakligini aniq belgilash; narx va muddat bo'yicha taklif berish uchun asos bo'lish.
+Atamalar. CEFR: Yevropa tillar umumiy doirasi (A2-C1). SaaS: obuna asosidagi bulutli xizmat. MVP: minimal ishlaydigan mahsulot. CMS: kontent boshqaruv tizimi. RAG: AI javobini faqat berilgan manbalar asosida shakllantirish usuli. SRS: oraliq takrorlash tizimi. Prioritetlar: Must (majburiy), Should (muhim), Could (imkon bo'lsa).
+2. Maqsad va muvaffaqiyat mezonlari
+Maqsad: mumtoz ingliz adabiyotini til darajasiga mos holda, lingvopoetik izohlar bilan o'rgatadigan raqamli platforma yaratish.
+Prototip uchun o'lchanadigan natijalar (taklif, kelishiladi):
+•Tanlangan boblar 4 CEFR darajasida to'liq tayyor va platformada ochiladi.
+•Tezaurusda 150 ta birlik bor va har biri kamida bitta matn misoliga bog'langan.
+•Veb, Android va iOS versiyalari ishlaydi; kritik xato (P0/P1) yo'q.
+•Pilot sinov: kamida 100 foydalanuvchi va 5 o'qituvchi (taklif), natijalar hisobotda.
+•"Ask Gadfly" sinov savollari to'plamida javoblarning kamida 90 foizi matnga mos va daraja bo'yicha to'g'ri (ekspert baholaydi).
+3. Foydalanuvchi rollari
+•Talaba/o'quvchi (Learner): o'qiydi, test topshiradi, o'ynaydi, AI-tutor bilan ishlaydi, progressini ko'radi.
+•O'qituvchi (Teacher): guruh yaratadi, topshiriq beradi, natijalarni kuzatadi, ish tekshiradi.
+•Kontent muharriri/metodist (Editor): matn versiyalari, izohlar, tezaurus, test bankini tayyorlaydi va tasdiqlaydi.
+•Administrator (Admin): foydalanuvchi, tashkilot, tarif, to'lov, AI sozlamalari, tizim monitoringi.
+•Tashkilot administratori (Could): universitet yoki maktab hisobi ostida o'qituvchi va talabalarni boshqaradi (SaaS multi-tenant).
+4. Funksional talablar
+4.1 Hisob va onboarding (Must)
+•Ro'yxatdan o'tish: email + parol, telefon (SMS kod), Google; ixtiyoriy: Telegram yoki OneID.
+•Parol tiklash, email/telefon tasdiqlash, bir nechta qurilmada sessiya.
+•Profil: interfeys tili (uz/ru/en), maqsad, hozirgi daraja, izoh tili.
+•Placement test: 20-25 savol, natija bo'yicha A2/B1/B2/C1 tavsiyasi; foydalanuvchi darajani keyin qo'lda o'zgartira oladi.
+4.2 Kutubxona va o'qish moduli (Must)
+•Tuzilma: asar, qism, bob, daraja versiyasi. The Gadfly: 3 qism, 26 bob va epilog; Jack Raymond: boblar soni manba matnga ko'ra.
+•Darajani o'qish paytida almashtirish: joylashuv (bob va paragraf) saqlanadi; parallel (yonma-yon) rejim: moslashtirilgan va asl matn.
+•Reader: shrift o'lchami va turi, mavzu (yorug'/qorong'i/sepia), xatcho'p, belgilash (highlight), shaxsiy eslatma, progress, "davom ettirish".
+•So'z ustiga bosish: tarjima (en dan uz/ru), IPA, so'z turkumi, misol, so'zning CEFR darajasi, "shaxsiy lug'atga saqlash".
+•Offline rejim (mobil): bob matni va audiosini yuklab olish.
+•Spoiler nazorati: tahlil va izohlarni o'qigan joyigacha ko'rsatish (sozlanadi).
+4.3 Poetik va madaniy izohlar qatlami (Must)
+•Izoh matn bo'lagiga (paragraf/gap ichidagi oraliq) bog'lanadi: turi (Ilova B), qisqa izoh, kengaytirilgan izoh, murakkablik darajasi, tezaurus birligiga havola.
+•Qatlamlarni turi bo'yicha yoqish va o'chirish (masalan, faqat metafora yoki faqat tarixiy izoh).
+•Madaniy-tarixiy izohlar: Risorgimento, Young Italy, Mazzini, Papa davlatlari, Sanfedistlar, Corpus Domini va boshqalar.
+•Dastlabki to'plam: dissertatsiyada tahlil qilingan epizodlar (Ilova B dagi misollar).
+4.4 Kognitiv tezaurus, 150 birlik (Must)
+•Birlik maydonlari: atama (en), uz/ru ekvivalenti, ta'rif (3 daraja: oddiy, standart, akademik), matndan misollar (bob va paragraf havolasi bilan), bog'liq atamalar, kategoriya, CEFR darajasi, ixtiyoriy rasm/diagramma/audio.
+•Qidiruv, kategoriya va daraja bo'yicha filtr, alifbo ro'yxati.
+•Bilim xaritasi: atamalar orasidagi bog'lanishlarning graf ko'rinishi.
+•Kartochkalar va oraliq takrorlash (SRS, masalan SM-2).
+•Tarkib taqsimoti taklifi: Ilova C.
+4.5 Interaktiv testlar (Must)
+•Savol turlari: bitta/ko'p javobli tanlov, bo'sh joyni to'ldirish (cloze), moslashtirish, tartiblash (drag-and-drop), qisqa javob, audio diktant, "matndagi vositani toping".
+•Har bir bob/daraja uchun test; savol metadatasi: bob, daraja, ko'nikma (o'qish, lug'at, adabiy tahlil), qiyinlik.
+•Avtomatik tekshiruv; qisqa javob va esse uchun rubrika asosida AI-baholash va o'qituvchi tasdig'i (Should).
+•Natija, xatolar tahlili, qayta urinish qoidalari, savollarni aralashtirish.
+•Bob yakunlanganda yakuniy sertifikat (PDF), (Could).
+4.6 O'yinlashtirish (Should)
+•XP ballari, darajalar, kunlik streak, nishonlar (badge), haftalik reyting (guruh/tashkilot ichida).
+•Kamida 4 mini-o'yin: so'z-ta'rif moslashtirish; "figurani top" (matndan stilistik vositani aniqlash); voqealar tartibini tiklash; "kim aytdi?" (iqtibos va qahramon).
+•O'yinlar tezaurus va lug'at bilan bog'lanadi va SRS holatini yangilaydi.
+4.7 Keyslar (Should)
+•Keys: amaliy o'quv vaziyati (stsenariy + matn parchasi + bosqichli savollar + rubrika). Masalan: "Montanelli monologida qaysi gumanizm turi ifodalangan? Dalil keltiring."
+•Individual va guruh rejimi; javob yozma yoki tanlov ko'rinishida; o'qituvchi baholaydi.
+•Prototipda kamida 8 ta keys (taklif).
+4.8 Audio-vizual kontent (Should)
+•Har bob versiyasi uchun audio: sifatli neyron TTS yoki diktor ovozi; tezlik 0.75-1.25x; matn bilan gap darajasida sinxronlash (karaoke uslubida ajratib ko'rsatish).
+•"3 tilda audio": tillar buyurtmachi bilan tasdiqlanadi (taxmin: ingliz tilida matn, o'zbek va rus tilida izoh/xulosa).
+•Qisqa videolar (1-3 daqiqa): bob xulosasi, tarixiy kontekst; subtitrlar.
+•Vizual materiallar: vaqt chizig'i, Italiya xaritasi, qahramonlar aloqasi grafigi.
+4.9 "Ask Gadfly" AI-tutor (Must)
+•Chat (veb va mobil) va matn ichida "Ask Gadfly" tugmasi: tanlangan fragment kontekst sifatida yuboriladi.
+•Rejimlar: (a) izohlovchi tutor (lug'at, grammatika, poetik tahlil); (b) mashq va savol generatori; (c) yozma ish bo'yicha fikr-mulohaza; (d) qahramon bilan suhbat (Could).
+•RAG: javoblar faqat platforma korpusiga (asl matn, adaptatsiyalar, izohlar, tezaurus) tayanadi; har javobda manba havolasi (bob va paragraf ID).
+•Daraja moslashuvi: javob murakkabligi foydalanuvchi CEFR darajasiga mos; izoh tili uz/ru/en tanlanadi.
+•Spoiler nazorati: foydalanuvchi o'qimagan boblardagi voqealar oshkor etilmaydi (sozlanadi).
+•Himoya chorlari: mavzudan tashqari va zararli so'rovlarni rad etish; korpusda yo'q iqtibosni to'qib chiqarmaslik.
+•Limitlar tarif bo'yicha (kunlik so'rovlar); streaming javob; baho tugmalari (foydali/foydasiz); anonim loglar admin tomonidan ko'riladi.
+•LLM provayderi almashtiriladigan abstraksiya qatlami; promptlar versiyalanadi; LLM'ga shaxsiy ma'lumot yuborilmaydi.
+4.10 O'qituvchi kabineti (Should)
+•Guruh yaratish (taklif kodi/havola), talabalarni qo'shish.
+•Topshiriq berish: bob + daraja + test/keys + muddat.
+•Progress va natijalar paneli; hisobotni CSV/XLSX ga eksport.
+•Esse va keys javoblarini rubrika bo'yicha baholash (AI taklifi + o'qituvchi tasdig'i).
+•O'z test va izohlarini qo'shish (Could).
+4.11 Admin panel va CMS (Must)
+•Asar, qism, bob va daraja versiyalari boshqaruvi; har paragrafga barqaror ID; versiya tarixi.
+•Ish jarayoni: qoralama, ko'rib chiqish, nashr. Rollar bo'yicha ruxsat.
+•Izoh muharriri: matnni belgilab, turini tanlab, izoh biriktirish.
+•Tezaurus muharriri, test banki muharriri (CSV/Excel import), media yuklash.
+•Foydalanuvchi, tashkilot, tarif, promo-kod boshqaruvi; AI parametrlari va promptlar; audit log.
+4.12 Tahlil va hisobotlar (Should)
+•Foydalanuvchi uchun: o'qilgan boblar, vaqt, lug'at hajmi, test natijalari, daraja dinamikasi.
+•Platforma uchun: DAU/MAU, retention, bob bo'yicha tugatish foizi, test statistikasi, AI foydalanish, to'lovlar.
+•Hodisalar kuzatuvi maxfiylikni hisobga olgan holda.
+4.13 Obuna va to'lov (Should)
+•Tariflar: bepul (cheklangan boblar/AI limiti) va premium; tashkilot litsenziyasi (Could).
+•To'lov: mahalliy to'lov tizimlari (Payme, Click, Uzum; ijrochi bilan tasdiqlanadi), chek/kvitansiya, promo-kod.
+•Mobil ilovada raqamli kontent uchun Apple va Google do'kon ichidagi to'lov qoidalari talab qilinishi mumkin; ijrochi dastlab tekshiradi.
+4.14 Bildirishnomalar (Could)
+•Push va email: kunlik eslatma, streak, yangi topshiriq, muddat yaqinlashishi. Foydalanuvchi sozlamalari orqali o'chiriladi.
+5. Kontent talablari
+Manbalar.
+•The Gadfly: Project Gutenberg #3431 (toza ingliz matni mavjud).
+•Jack Raymond: loyiha fayllaridagi PDF faqat Google Books shartlari sahifasidan iborat, matn ajratib olinmaydi. Dasturchiga berishdan oldin toza matn manbasi (yoki OCR) topilishi shart.
+•Dissertatsiya materiallari (stilistik vositalar, badiiy detallar, nutq shakllari, gumanizm turlari) izohlar va tezaurus uchun metodik asos bo'ladi. Izoh va tezaurusdagi har bir iqtibos asl matn bilan qayta tekshiriladi.
+Prototip hajmi (kelishiladi): The Gadfly dan N ta bob va Jack Raymond dan M ta bob, har biri 4 daraja bo'yicha. Tavsiya: dissertatsiyada tahlil qilingan epizodlarni o'z ichiga olgan boblardan boshlash.
+Daraja parametrlari (taklif; metodist tasdiqlaydi):
+•A2: gap uzunligi o'rtacha 8-12 so'z; taxminan 1 500 ta asosiy so'z (A1-A2); asosan oddiy zamonlar; passiv, inversiya va uzun qo'shma gaplarsiz; asosiy syujet va dialoglar saqlanadi.
+•B1: 12-16 so'z; taxminan 2 500-3 000 so'z; Present Perfect, modal fe'llar, oddiy shart gaplar; murakkab tasvirlar qisqartiriladi.
+•B2: 16-22 so'z; taxminan 4 000-5 000 so'z; passiv, ko'chirma nutq, idiomalar izoh bilan; asl matnga yaqin.
+•C1: 20-30 so'z; asl matnga eng yaqin; faqat eskirgan va juda kam uchraydigan leksika soddalashtiriladi.
+•Lug'at ro'yxatlari: ochiq CEFR ro'yxatlari (masalan, English Vocabulary Profile yoki Oxford 3000/5000; litsenziya tekshiriladi).
+Moslashtirish jarayoni: manba matn, segmentatsiya (paragraf/gap ID), AI yordamida qoralama, metodist tahriri, avtomatik leksik-daraja tekshiruvi, nashr. Moslashtirilgan paragraflar asl paragraf ID siga bog'lanadi (parallel rejim va izohlar uchun).
+Kognitiv tezaurus: 150 birlik; tarkib Ilova C da.
+Mualliflik huquqi (muhim): Voynich 1960-yilda vafot etgan. Asl matn AQShda umumiy mulk bo'lsa-da, ko'p yurisdiksiyalarda himoya muddati muallif umri + 70 yil hisoblanadi. O'zbekistondagi amaldagi muddatni nashrdan oldin yurist bilan aniqlashtiring. Boshqa muallifning tarjimalaridan (masalan, o'zbekcha Ismoiliy tarjimasi) ruxsatsiz foydalanilmaydi.
+6. Ma'lumotlar modeli (asosiy obyektlar)
+User, Organization, Class, Enrollment, Assignment; Work, Part, Chapter, ChapterVersion (daraja), Paragraph/Sentence (source_id bilan); Annotation, AnnotationType; ThesaurusEntry, ThesaurusLink; VocabularyItem, UserVocab (SRS holati); Quiz, Question, Attempt; Case, CaseSubmission; Media (audio/video); Progress, XPEvent, Badge; Subscription, Payment; AIConversation, AIMessage; Notification; AuditLog.
+Dasturchi ER-diagrammani birinchi bosqichda taqdim etadi va tasdiqlatadi.
+7. Arxitektura va texnologiyalar (tavsiya)
+•Veb: React + Next.js (TypeScript), PWA imkoniyati, SEO uchun kutubxona va tezaurus sahifalari ochiq.
+•Mobil: bitta kod bazasi bilan Android va iOS (Flutter yoki React Native).
+•Backend: NestJS (Node.js) yoki Django/FastAPI (Python); REST API + OpenAPI hujjati.
+•Ma'lumotlar: PostgreSQL (RAG uchun pgvector bilan), Redis (kesh va navbat), S3 ga mos obyekt xotira (audio/video/rasm), CDN.
+•Fon vazifalari: navbat tizimi (TTS, AI baholash, eksport).
+•DevOps: Docker, CI/CD, staging va production muhitlari, monitoring va xatolar kuzatuvi (masalan, Sentry, Prometheus/Grafana), markazlashgan loglar.
+•Yakuniy texnologiyalarni ijrochi asoslab taklif qiladi; talab: ochiq standartlar, keng tarqalgan stek, kodni boshqa jamoa ham qo'llab-quvvatlay olishi.
+8. Nofunksional talablar
+•Tezlik: sahifa 4G da 3 soniyagacha ochiladi; API javobi (AI dan tashqari) p95 bo'yicha 500 ms gacha; AI javobining birinchi qismi 3 soniya ichida.
+•Yuklama: prototip uchun bir vaqtda kamida 1 000 faol foydalanuvchi (taklif); kengayish imkoniyati.
+•Mavjudlik: oylik 99,5 foiz; rejalashtirilgan to'xtashlar oldindan e'lon qilinadi.
+•Zaxira: kunlik backup, 30 kun saqlash, qayta tiklash sinovi.
+•Qurilmalar: Android 8+ va iOS 14+ (taklif); Chrome, Safari, Edge, Firefox ning oxirgi 2 versiyasi.
+•Til: interfeys uz (lotin), ru, en; kelajakda uz (kirill) qo'shish imkoniyati.
+•Qulaylik: WCAG 2.1 AA kontrast talablari, shrift sozlamalari, klaviatura bilan boshqarish.
+9. Xavfsizlik, maxfiylik va huquqiy talablar
+•HTTPS/TLS, parollar argon2 yoki bcrypt bilan, rollar bo'yicha ruxsat (RBAC), so'rovlar chegarasi (rate limit), OWASP Top 10 bo'yicha tekshiruv, audit log, sirlarni xavfsiz saqlash.
+•Shaxsiy ma'lumotlar: O'zbekiston qonunchiligidagi ma'lumotlar lokalizatsiyasi talabi hisobga olinadi: fuqarolarning shaxsiy ma'lumotlari O'zbekiston hududidagi serverlarda saqlanadi (mahalliy data-markaz). Rozilik shakli, maxfiylik siyosati, ma'lumotni o'chirish imkoniyati. Yurist bilan tasdiqlash tavsiya etiladi.
+•AI: chet eldagi LLM provayderiga shaxsiy ma'lumot (ism, telefon, email) yuborilmaydi; so'rovlar anonimlashtiriladi.
+•Intellektual mulk: manba kod, dizayn, kontent va ma'lumotlar bazasi sxemasi buyurtmachi mulki; NDA; ishlatilgan ochiq kodli kutubxonalar va ularning litsenziyalari ro'yxati beriladi. Loyiha hozircha patentlanmagan; dasturchi ish davomida bunga to'sqinlik qiluvchi shartlar qo'ymaydi.
+10. UI/UX talablari
+•Avval Figma prototipi (veb va mobil), buyurtmachi tasdig'idan keyin ishlab chiqish.
+•O'qish tajribasi markazda: toza matn maydoni, izoh paneli, daraja almashtirgich bir bosishda.
+•Mobilda bir qo'l bilan qulay boshqaruv; oflayn holat ko'rsatkichi.
+•Brend: logotip, ranglar va uslub buyurtmachi tomonidan beriladi yoki dizayn bosqichida kelishiladi.
+11. Integratsiyalar
+SMS-provayder (OTP), email xizmati, push (FCM/APNs), to'lov tizimlari, LLM provayderi (almashtiriladigan qatlam orqali), TTS xizmati, tahlil (analytics), Google login. Har bir integratsiya uchun xizmat ko'rsatuvchi va xarajat ijrochi tomonidan oldindan ko'rsatiladi.
+12. Test va qabul qilish
+•Ijrochi test rejasi va test hisobotini beradi: birlik, integratsiya, yuklama, xavfsizlik, qurilmalar bo'yicha sinov.
+•Qabul mezonlari: barcha Must talablar ishlaydi; P0/P1 xatolar yo'q; 4 daraja bo'yicha tanlangan boblar ochiladi va daraja almashganda joylashuv yo'qolmaydi; tezaurusda 150 birlik; AI sinov to'plamida (50 savol) 90 foiz mezoni bajarilgan; Android/iOS build do'kon talablariga mos.
+•Pilot sinovdan keyin aniqlangan kamchiliklar kelishilgan muddatda bepul tuzatiladi (kafolat muddati shartnomada).
+13. Bosqichlar va topshiriladigan natijalar
+Muddatlar ijrochi bilan kelishiladi: [__ oy].
+•0-bosqich. Tahlil va dizayn: talablar aniqlashtirish, arxitektura, ER-diagramma, Figma prototipi.
+•1-bosqich. Yadro: hisob, kutubxona/reader, CMS, 4 daraja versiyalari, parallel rejim.
+•2-bosqich. O'quv funksiyalari: izohlar qatlami, tezaurus, testlar, shaxsiy lug'at va SRS.
+•3-bosqich. Ishtirok va audio: o'yinlar, keyslar, audio-vizual, o'qituvchi kabineti.
+•4-bosqich. AI va monetizatsiya: Ask Gadfly (RAG), analitika, obuna va to'lov.
+•5-bosqich. Mobil ilovalar: Android va iOS, do'konlarga joylash (parallel yuritilishi mumkin).
+•6-bosqich. Pilot va qabul: sinov, tuzatishlar, rasmiy topshirish.
+•7-bosqich. Hosting va qo'llab-quvvatlash: 36 oy (monitoring, backup, xavfsizlik yangilanishlari, xatolarni tuzatish; SLA javob vaqtlari shartnomada).
+Topshiriladigan natijalar: ishlaydigan veb va mobil ilovalar; manba kod (Git repozitoriy); API hujjati; ma'lumotlar bazasi sxemasi; deploy va tiklash yo'riqnomasi; admin va o'qituvchi uchun foydalanuvchi qo'llanmalari; test hisoboti; admin va muharrirlarni o'qitish.
+14. Buyurtmachi aniqlashtirishi kerak bo'lgan savollar
+1.Audio qaysi 3 tilda bo'ladi va ovoz turi (TTS yoki diktor)?
+2.Prototipga nechta bob kiradi (The Gadfly va Jack Raymond bo'yicha)?
+3.Jack Raymond uchun toza matn manbasi qaysi?
+4.Tarif modeli va narxlar (oylik/yillik, tashkilot litsenziyasi)?
+5.AI provayderi va oylik AI byudjeti?
+6.Kontent metodisti kim (CEFR moslashtirishni kim tasdiqlaydi)?
+7.Brend materiallari va dizayner kim?
+8.Apple va Google dasturchi akkauntlari kimning nomida ochiladi?
+9.Hosting joyi (mahalliy data-markaz) va domen nomi?
+10.Muddatlar va to'lov bosqichlari (Innovatsiya agentligi hisobotlari bilan mos).
+Ilova A. Moslashtirish bo'yicha qisqa ko'rsatma
+Har bir daraja versiyasida syujet, qahramonlar, asosiy ziddiyatlar va muhim iqtiboslar saqlanadi. Moslashtirishda asosiy g'oya (erkinlik, fidoyilik, vijdon, otalik va diniy ziddiyat) buzilmaydi. Poetik vositalar A2 va B1 da qisqartirilsa ham, izohlarda saqlanadi.
+Ilova B. Izoh taksonomiyasi va namunalar
+•Stilistik figuralar: anafora, leksik takror, ritorik savol, gradatsiya, antiteza, parallelizm, inversiya. Misollar: "Fragola! fragola!" (leksik takror); "I see a great, white being..." (anafora); "What should I do without you?" (ritorik savol).
+•Troplar: metafora, taqqoslash, personifikatsiya, epitet. Misollar: "His note was always that of a caress" (metafora); "a tame panther without the claws" (taqqoslash); "the old vine... shaking a leafy head" (personifikatsiya).
+•Badiiy detal: predmet (the great crucifix; spray of cypress), portret (dreamy, mystical eyes), nutqiy ("Padre, pray for me, and for Italy"), ruhiy (foxglove gullarini asabiy ezish), peyzaj (the torrent roared and howled).
+•Nutq shakllari: dialog, monolog, ichki monolog, muallif nutqi.
+•Gumanizm turlari: ijtimoiy, axloqiy, oilaviy, diniy, pedagogik, empatik, ruhiy-ma'naviy.
+•Syujet va kompozitsiya: ekspozitsiya, tugun, voqealar rivoji, kulminatsiya, yechim; retrospektiv kompozitsiya.
+•Frazeologizmlar va idiomalar: matndan tanlanadi, har biriga ma'no va qo'llanish izohi.
+•Madaniy-tarixiy izohlar: realiyalar va tarixiy kontekst.
+Ilova C. Tezaurus tarkibi (taklif, 150 birlik)
+•Stilistik figuralar va troplar: 30
+•Frazeologizmlar va idiomalar (matndan): 30
+•Tarixiy-madaniy realiyalar: 25
+•Syujet, kompozitsiya va obraz nazariyasi: 20
+•Gumanizm va axloqiy-falsafiy tushunchalar: 15
+•Badiiy detal va nutq shakllari: 15
+•Psixologik va ruhiy kategoriyalar: 15
+Jami: 150. Taqsimot metodist bilan yakuniy tasdiqlanadi.
+Ilova D. Platformaga kiritiladigan kontent paketi
+Bu ilova platformaga asarlarning qaysi qismlari va qanday shaklda joylanishini belgilaydi. Kontentni (moslashtirilgan matn, izoh, tezaurus, test) buyurtmachi/metodist tayyorlaydi; dasturchi esa uni CMS orqali yuklash (import) vositasini yaratadi. Agar kontent tayyorlash ham ijrochi zimmasida bo'lsa, bu shartnomada alohida ko'rsatiladi.
+D.1 Prototipga kiradigan boblar (taklif)
+The Gadfly (manba: Project Gutenberg #3431; 3 qism, 26 bob va epilog).
+•Asosiy to'plam (6 birlik): I qism 1-bob (kutubxona va bog'dagi suhbat), I qism 2-bob (Alp tog'lari sayohati), I qism 3-bob (talabalar yig'ini, Gemma, Young Italy), I qism 4-bob (Father Cardi va e'tirof), III qism 6-bob (Montanelli va Gadfly uchrashuvi), Epilog (Gemmaga xat).
+•Kengaytirilgan to'plam (+5): I qism 5, 6, 7-boblar (hibsga olinish, so'roq, xiyonat, qochish), III qism 7-bob (qatl), III qism 8-bob (Corpus Domini va va'z).
+•II qism (Florensiya, 11 bob) keyingi bosqichga qoldiriladi.
+Jack Raymond: boblar toza matn qo'lga kiritilgach belgilanadi. Tavsiya: dissertatsiyada tahlil qilingan epizodlar uchragan boblar (doktor Jenkins bilan uchrashuv va "Bad Boys' Gang" dialogi, qushni qafasdan qo'yib yuborish, Kornuoll tabiati tasviri).
+I qism 5-7 va III qism 7 boblarida o'z joniga qasd urinishi, zo'ravonlik va qatl mavzulari bor: platformada bunday boblarga "sezgir mavzu" belgisi va o'qishdan oldingi ogohlantirish qo'yiladi.
+D.2 Import uchun matn tuzilishi
+•Har bir bob-daraja versiyasi uchun alohida fayl (DOCX, Markdown, CSV yoki JSON; CMS CSV/Excel va JSON ni qabul qilishi shart).
+•Har bir yozuv (paragraf) maydonlari: paragraph_id, source_paragraph_id (asl matndagi paragraf), level (A2/B1/B2/C1), text, speaker (dialog uchun, ixtiyoriy), note (ixtiyoriy).
+•ID qoidasi: gf-p1-c01-p001 = The Gadfly, I qism, 1-bob, 1-paragraf; epilog: gf-ep-p001; Jack Raymond: jr-c01-p001. Asl matn paragraflari ID olgach, o'zgarmaydi; sahifa raqamlariga tayanilmaydi.
+•Izoh yozuvi maydonlari: annotation_id, paragraph_id, iqtibos (qisqa bo'lak), type (Ilova B kodi), levels (qaysi darajalarda ko'rsatiladi), short_note va long_note (uz/ru/en), thesaurus_ref.
+D.3 Izohlarning boshlang'ich to'plami (The Gadfly)
+Quyidagilar dissertatsiyada tahlil qilingan o'rinlar bo'lib, platformada birinchi izohlar sifatida kiritiladi.
+I qism, 1-bob
+•"Fragola! fragola!": leksik takror, akustik tasvir.
+•"its note was always that of a caress": metafora (Montanelli ovozi).
+•"a slender little creature... an Italian in a sixteenth-century portrait": portret detali.
+•"a tame panther without the claws": taqqoslash.
+•"dreamy, mystical eyes, deep blue under black lashes": portret detali, epitet.
+•"What should I do without you, Arthur?": ritorik savol, nutqiy detal.
+•"the old vine... shaking a leafy head": personifikatsiya, peyzaj detali.
+•foxglove gullarini asabiy ezish: ruhiy (psixologik) detal.
+•"the great crucifix in the alcove": predmet detali.
+•"To give up my life to Italy...": monolog, ijtimoiy gumanizm.
+•"He that loseth his life for my sake shall find it": Injil iqtibosi (intertekst), diniy gumanizm.
+•"You are the light of my eyes": metafora, oilaviy gumanizm.
+•"Padre! pray for me, and for Italy": nutqiy detal.
+•"how small and selfish I am beside him!": ichki monolog.
+I qism, 2-bob
+•"I see a great, white being... I see it waiting... I see it through a glass darkly": anafora (Injilga ishora).
+•"the torrent roared and howled... everlasting despair": peyzaj detali, personifikatsiya.
+•"It is like hell" / "it is only like a human soul": dialog, metafora.
+•"To-morrow, to-morrow": takror (Montanellining ikkilanishi).
+I qism, 3-bob
+•"a spray of cypress": predmet detali, Young Italy ramzi.
+•"For God and the people... Now and forever": shior (madaniy-tarixiy izoh).
+I qism, 4-bob
+•"My father, I accuse myself of the sins of jealousy and anger": e'tirof nutqi, axloqiy gumanizm.
+•"And this was the soul that was preparing for absolution": ichki monolog (muallif nutqida).
+•"He covered his face with both hands in bitter humiliation": ruhiy detal.
+•"Only five minutes ago he had been dreaming of martyrdom": antiteza, ichki ziddiyat.
+I qism, 5-bob
+•Julia: "wooden smile": portret detali, salbiy obraz.
+III qism, 6-bob va 8-bob
+•"Call Him louder; perchance He sleepeth": Injildagi ishora (intertekst), ikkala bobda ham uchraydi.
+•"You have your mother's eyes!": syujet kulminatsiyasi.
+Boshlang'ich to'plam taxminan 30 ta; prototip uchun The Gadfly bo'yicha kamida 60 ta (qolganini metodist qo'shadi), Jack Raymond bo'yicha kamida 20 ta izoh.
+D.4 Madaniy-tarixiy izohlar uchun nomzodlar
+Young Italy va Mazzini harakati (I qism 3-bob, II qism 1-bob); Risorgimento va Avstriya hukmronligi; 1846-yil Papa amnistiyasi va yangi Papa (II qism 1-bob); Sanfedistlar va iezuitlar (II qism); Savigno qo'zg'oloni (II qism); Corpus Domini bayrami va yurishi (III qism 5 va 8-boblar); e'tirof va absolutsiya, Lent va Good Friday (I qism 4-5-boblar); seminariya, kanonik va kardinal unvonlari; harbiy sud (court-martial).
+D.5 Prototip kontent hajmi (taklif)
+•Matn: asosiy to'plamda 6 birlik x 4 daraja = 24 bob-versiya; Jack Raymond bo'yicha shunga o'xshash hajm (kelishiladi).
+•Izohlar: D.3 dagi hajm.
+•Tezaurus: 150 birlik (Ilova C).
+•Testlar: har bob-daraja uchun 8 savol (taklif) + placement test uchun 25 savol.
+•Keyslar: 8 ta.
+•Audio: har bob-daraja uchun narratsiya + uz/ru qisqa xulosa audiosi (tillar tasdiqlanadi).
+•Video: 4-6 ta qisqa tushuntiruvchi video.
+D.6 Kontentni tekshirish (QA) bo'yicha eslatmalar
+•Dissertatsiyadagi iqtiboslar kontentga kiritilishdan oldin asl matn bilan solishtiriladi: sahifa raqamlari turli nashrlarga tegishli, shuning uchun platformada paragraf ID ishlatiladi.
+•"the torrent roared and howled" iborasi dissertatsiyada ba'zi o'rinlarda Jack Raymond ga bog'langan, lekin The Gadfly da (I qism, 2-bob) mavjud; Jack Raymond matni qo'limizda yo'qligi uchun tekshirib bo'lmadi.
+•Dissertatsiyadagi Olive Latham iqtiboslari (ba'zilari The Gadfly sahifalari bilan ko'rsatilgan, nashr yillari ham turlicha) platforma doirasiga kirmaydi; izohlarga olinmaydi.
+•Jack Raymond bo'yicha barcha iqtibos va izohlar toza matn olingach qayta tekshiriladi.
+•Mualliflik huquqi masalasi 5-bo'limdagi eslatma bo'yicha yurist bilan hal qilinadi.
+Ilova E. Namuna (demo) versiyasining aniq tarkibi
+Namuna: platformaning kichik, lekin to'liq ishlaydigan qismi (vertical slice). U bitta bobni boshidan oxirigacha ko'rsatadi: o'qish, daraja almashtirish, izoh, tezaurus, test, o'yin va AI-tutor. Maqsad: g'oyani ishlaydigan holda ko'rsatish va to'liq loyiha uchun narx va muddatni aniqlashtirish. Namuna kodi tashlab yuboriladigan emas, keyin kengaytiriladi.
+E.1 Namunaning doirasi
+•Asar va bob: The Gadfly, I qism, 1-bob (kutubxona va bog'dagi suhbat; taxminan 2 500 so'z, aniq hajm importda aniqlanadi). Sabab: D.3 dagi 14 ta izohning barchasi shu bobda, bob mazmunan to'liq va sahnalari yorqin.
+•Daraja: A2, B1, B2, C1 (4 ta versiya) + asl matn (parallel rejim uchun).
+•Platforma: veb (mobil brauzerda to'liq ishlaydigan moslashuvchan dizayn, 360 px dan). Android/iOS ilovalari namunaga kirmaydi.
+•Tillar: interfeys uz va en (ru ixtiyoriy); izohlar uz/ru/en.
+•Foydalanuvchilar: o'quvchi va administrator. Namunada real shaxsiy ma'lumot yig'ilmaydi: faqat berilgan test akkauntlar (ochiq ro'yxatdan o'tish yoqilsa, 9-bo'lim talablari qo'llanadi).
+E.2 Namunaga kiradi
+1.Hisob: email + parol bilan kirish va ro'yxatdan o'tish, interfeys tilini tanlash.
+2.Mini-test: 8 savol, natija bo'yicha daraja tavsiyasi (A2/B1/B2/C1); darajani qo'lda o'zgartirish mumkin.
+3.Kutubxona: ikkita karta. The Gadfly (faol, 1 bob) va Jack Raymond ("Tez orada" belgisi bilan yopiq).
+4.Reader: daraja almashtirgich (joylashuv saqlanadi), parallel rejim (moslashtirilgan va asl matn yonma-yon), shrift o'lchami, mavzu (yorug'/qorong'i), xatcho'p, progress.
+5.So'z lug'ati: so'z ustiga bosilganda oyna: tarjima (en dan uz/ru), so'z turkumi, IPA, CEFR darajasi, "lug'atimga saqlash". Kamida 150 ta so'z uchun tayyorlangan ma'lumot (buyurtmachi beradi).
+6.Izohlar qatlami: D.3 dagi 14 ta izoh matnda rangli ajratib ko'rsatiladi; bosilganda yon panelda qisqa va kengaytirilgan izoh; turi bo'yicha qatlamni yoqish/o'chirish; tezaurusga havola.
+7.Tezaurus: 15 birlik (metafora, taqqoslash, personifikatsiya, leksik takror, ritorik savol, portret detali, predmet detali, peyzaj detali, ruhiy detal, nutqiy detal, monolog, ichki monolog, ijtimoiy, diniy va oilaviy gumanizm). Ro'yxat, qidiruv, birlik sahifasi (ta'rif, matndan misol, asosiy matnga qaytish havolasi), kartochka rejimi.
+8.Testlar: har daraja uchun 8 savol (jami 32). Turlari: bitta javobli tanlov, bo'sh joyni to'ldirish, moslashtirish, "matndagi vositani toping". Darhol fikr-mulohaza, natija ekrani, natijani saqlash.
+9.Mini-o'yin: bitta o'yin ("Figurani top": matndan jumlani tanlab, stilistik vositani aniqlash) + XP ballari va kunlik streak ko'rsatkichi.
+10.Ask Gadfly (AI-tutor): reader ichida chat va "tanlangan matn haqida so'ra" tugmasi. Faqat shu bobning korpusiga tayanadi (4 versiya, asl matn, izohlar, 15 tezaurus birligi). Talablar: manba havolasi (paragraf ID), javob murakkabligi foydalanuvchi darajasiga mos, javob tili uz yoki en, kuniga 20 so'rov chegarasi, mavzudan tashqari savolga muloyim rad, keyingi boblar voqealarini oshkor qilmaslik ("bu keyingi boblarda ochiladi").
+11.Audio: B1 versiyasi uchun ingliz tilidagi narratsiya, gap bo'yicha matn bilan sinxron ajratib ko'rsatish, tezlik 0.75-1.25x (qolgan darajalar ixtiyoriy).
+12.Mening progressim: o'qilgan qism foizi, test natijalari, saqlangan so'zlar, XP va streak.
+13.Admin mini-panel: kirish, kontentni CSV/JSON dan yuklash (matn versiyalari, izohlar, tezaurus, lug'at, savollar), nashr qilish/yashirish. Namunadagi barcha kontent shu import orqali yuklanadi (jarayonni isbotlash uchun).
+E.3 Namunaga kirmaydi
+To'lov va obuna; o'qituvchi kabineti; keyslar; video; push va email bildirishnomalar; offline rejim; Android/iOS ilovalari; Jack Raymond va boshqa boblar matni; tashkilot hisoblari; kengaytirilgan tahlil paneli; reyting jadvallari.
+E.4 Ekranlar ro'yxati
+•S1. Bosh sahifa: nom, qisqa tavsif, "Boshlash" tugmasi, til tanlash.
+•S2. Kirish/ro'yxatdan o'tish.
+•S3. Mini-test va natija: tavsiya etilgan daraja, "boshqa daraja tanlash".
+•S4. Kutubxona: 2 ta asar kartasi.
+•S5. Bob sahifasi: bob qisqacha mazmuni, daraja tanlash, "O'qish", "Test", "Audio".
+•S6. Reader: matn, daraja almashtirgich, parallel rejim, izoh paneli, lug'at oynasi, audio pleer, Ask Gadfly paneli.
+•S7. Tezaurus: ro'yxat va qidiruv; S7a. birlik sahifasi; S7b. kartochkalar.
+•S8. Test: savollar, natija.
+•S9. O'yin: "Figurani top".
+•S10. Mening progressim.
+•S11. Admin: import va nashr.
+Har bir ekran uchun Figma maketi (veb + mobil o'lcham) kodlashdan oldin buyurtmachi tomonidan tasdiqlanadi.
+E.5 Buyurtmachi tayyorlab beradigan kontent (namuna uchun)
+•Bob matni: asl + A2, B1, B2, C1 versiyalari (D.2 formatida, paragraf ID bilan).
+•14 ta izoh (D.3 ro'yxati): har biriga qisqa va kengaytirilgan izoh (uz/ru/en).
+•15 ta tezaurus birligi (ta'rif, matndan misol, bog'liq atamalar).
+•Lug'at jadvali: 150 so'z (tarjima uz/ru, so'z turkumi, IPA, CEFR).
+•40 ta savol: mini-test uchun 8 + har daraja uchun 8.
+•B1 audio fayli (yoki dasturchi TTS bilan yaratadi; ovoz turi kelishiladi).
+•Ask Gadfly sinov to'plami: 30 savol va kutilgan javoblar (25 mazmunli savol: lug'at, poetik tahlil, syujet; 5 mavzudan tashqari savol).
+•Logotip va ranglar (bo'lmasa, dizayner vaqtinchalik variant taklif qiladi).
+E.6 Namuna uchun texnik talablar
+•Stek 7-bo'limdagi tavsiyaga mos; namunada mobil ilova o'rniga PWA sifatida o'rnatiladigan veb.
+•Ma'lumotlar modeli 6-bo'limning qismi: User, Work, Chapter, ChapterVersion, Paragraph, Annotation, ThesaurusEntry, VocabularyItem, UserVocab, Quiz, Question, Attempt, Progress, XPEvent, AIConversation, AIMessage.
+•Paragraf ID qoidasi D.2 ga muvofiq; daraja almashtirishda joylashuv source_paragraph_id orqali saqlanadi.
+•AI: provayder almashtiriladigan qatlam orqali; RAG faqat shu bob korpusida; LLM'ga ism, email va boshqa shaxsiy ma'lumot yuborilmaydi; promptlar versiyalanadi.
+•Staging manzil HTTPS bilan; ma'lumotlar bazasi zaxirasi; xatolar monitoringi (Sentry yoki shunga o'xshash).
+•Brauzerlar: Chrome, Safari (iOS ham), Edge, Firefox ning oxirgi 2 versiyasi.
+•Mobil dizaynda matn o'qilishi qulay: asosiy shrift kamida 16 px, tugmalar kamida 44 px.
+E.7 Qabul mezonlari (namuna)
+•Yangi foydalanuvchi ro'yxatdan o'tib, mini-test orqali daraja oladi va 2 daqiqa ichida bobni o'qishni boshlaydi.
+•Daraja almashtirilganda matn 1 soniyadan kam vaqtda yangilanadi va foydalanuvchi o'sha paragrafda qoladi.
+•14 ta izoh to'g'ri joyda ko'rinadi, tur bo'yicha o'chirib-yoqiladi, tezaurus havolalari to'g'ri sahifaga olib boradi.
+•Tezaurus qidiruvi uz, ru va en da ishlaydi; har birlikda matndan misol va asosiy matnga qaytish havolasi bor.
+•4 daraja bo'yicha 32 savol ishlaydi, natija saqlanadi, qayta kirganda ko'rinadi.
+•Ask Gadfly: 25 mazmunli savoldan kamida 20 tasiga (80 foiz) manba havolasi bilan, daraja-mos va to'g'ri javob; 5 mavzudan tashqari savol muloyim rad etiladi; keyingi boblar voqealari oshkor qilinmaydi (ekspert baholaydi).
+•Audio: matn bilan sinxron ajratib ko'rsatish gap darajasida ishlaydi.
+•Barcha kontent admin import orqali xatosiz yuklanadi; takroriy import mavjud ID larni buzmaydi.
+•Android Chrome va iOS Safari da to'liq ishlaydi; sahifa 4G da 3 soniyagacha ochiladi; kritik xato (P0/P1) yo'q.
+E.8 Topshiriladigan natijalar
+Ishlaydigan staging manzil; test akkauntlar (o'quvchi va admin); manba kod (Git repozitoriy); ishga tushirish yo'riqnomasi (README); namunaga tegishli ER-diagramma; ochiq muammolar va keyingi qadamlar ro'yxati; to'liq loyiha uchun yangilangan narx va muddat taklifi.
+E.9 Taklif etilgan muddat (ijrochi baholaydi)
+•1-hafta: Figma maketlari (S1-S11), kontent formatlarini tasdiqlash, arxitektura.
+•2-4-hafta: hisob, reader, daraja almashtirish, parallel rejim, admin import.
+•4-6-hafta: izohlar, lug'at, tezaurus, testlar, o'yin, progress.
+•6-7-hafta: Ask Gadfly (RAG), audio sinxronlash.
+•8-hafta: sinov, tuzatishlar, topshirish.
+Bu taxminiy reja; ijrochi o'z jamoasi bo'yicha aniq muddat va narxni taklif qiladi.
+E.10 Namuna ko'rsatish ssenariysi (taqdimot uchun, taxminan 6 daqiqa)
+1.Bosh sahifa, ro'yxatdan o'tish.
+2.Mini-test: tavsiya B1.
+3.Kutubxona: The Gadfly, bobni ochish.
+4.B1 matnini o'qish, so'z ustiga bosish (tarjima), audioni yoqish.
+5.A2 ga o'tish: joy saqlanadi; parallel rejimni ko'rsatish.
+6.Izoh: "a tame panther without the claws", tezaurusdagi "Taqqoslash" birligi va kartochka.
+7.Ask Gadfly: "Nima uchun Montanellining ovozi erkalashga o'xshatilgan?" va mavzudan tashqari savolga rad.
+8.Test va o'yin, XP va progress sahifasi.
+9.Admin: yangi izohni CSV orqali yuklab, nashr qilish.

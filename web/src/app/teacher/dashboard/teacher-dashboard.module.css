@@ -1,0 +1,122 @@
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: var(--bg-glass);
+  border: var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 2px solid var(--c, var(--color-primary));
+  transition: transform var(--transition-base);
+}
+
+.statCard:hover { transform: translateY(-2px); }
+
+.statIcon { font-size: 26px; }
+
+.statLabel { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.statValue { font-size: 24px; font-weight: 800; color: var(--text-primary); }
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.progressCard { grid-column: 1 / -1; }
+
+.card, .progressCard {
+  padding: 24px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cardHeader h3 { font-size: 16px; font-weight: 700; }
+
+.link { font-size: 13px; color: var(--color-primary-light); text-decoration: none; }
+.link:hover { color: var(--color-accent); }
+
+/* Classes */
+.classesList { display: flex; flex-direction: column; gap: 12px; }
+
+.classItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  transition: background var(--transition-fast);
+}
+
+.classItem:hover { background: rgba(255,255,255,0.06); }
+
+.classIcon { font-size: 24px; }
+
+.classInfo { flex: 1; }
+
+.className { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+.classMeta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.classMeta code { color: var(--color-accent); font-family: monospace; }
+
+/* Assignments */
+.assignmentsList { display: flex; flex-direction: column; gap: 10px; }
+
+.assignmentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  transition: background var(--transition-fast);
+}
+
+.assignmentItem:hover { background: rgba(255,255,255,0.06); }
+
+.assignmentLeft { flex: 1; }
+
+.assignmentTitle { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+
+.assignmentMeta { font-size: 12px; color: var(--text-muted); }
+
+.assignmentRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dueBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(84, 160, 255, 0.15);
+  color: var(--color-info);
+  border-radius: var(--border-radius-full);
+}
+
+.urgent {
+  background: rgba(255, 87, 87, 0.15);
+  color: var(--color-danger);
+}
+
+@media (max-width: 1000px) {
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+  .mainGrid { grid-template-columns: 1fr; }
+  .progressCard { grid-column: 1; }
+}
